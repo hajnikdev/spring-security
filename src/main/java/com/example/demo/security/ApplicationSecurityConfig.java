@@ -41,13 +41,13 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails annasmithUser = User.builder()
                 .username("annasmith")
                 .password(passwordEncoder.encode("password"))
-                .roles("STUDENT") // this will be ROLE_STUDENT
+                .roles(ApplicationUserRole.STUDENT.name()) // this will be ROLE_STUDENT
                 .build();
 
         UserDetails lindaUser = User.builder()
                 .username("linda")
                 .password(passwordEncoder.encode("password123"))
-                .roles("ADMIN") // this will be ROLE_ADMIN
+                .roles(ApplicationUserRole.ADMIN.name()) // this will be ROLE_ADMIN
                 .build();
 
         return new InMemoryUserDetailsManager(
