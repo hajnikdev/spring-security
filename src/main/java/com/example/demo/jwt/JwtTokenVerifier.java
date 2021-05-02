@@ -33,7 +33,7 @@ public class JwtTokenVerifier extends OncePerRequestFilter {
             return ;
         }
 
-        String token = authorizationHeader.replace(authorizationHeader, "Bearer ");
+        String token = authorizationHeader.replace( "Bearer ", "");
 
         try {
             String secretKey = "securesecuresecuresecuresecuresecure";
